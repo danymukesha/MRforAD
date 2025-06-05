@@ -21,7 +21,7 @@ a dataframe with standardized column names: \code{SNP}, \code{beta},
 }
 \description{
 This f(x) loads GWAS summary statistics from a file and standardizes
-the column names.
+the column names (e.g., ADNI).
 }
 \examples{
 \dontrun{
