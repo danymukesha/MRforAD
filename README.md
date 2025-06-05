@@ -1,4 +1,4 @@
-# MRforAD (Mendelian Randomization for Alzheimer's Disease)
+# MRforAD 
 
 ## Package overview
 The `MRforAD` is an R package designed for Mendelian Randomizaion (MR) analysis, focusing on Alzheimer's Disease (AD). 
@@ -28,3 +28,18 @@ The ADNI cohort, with is longitudinal data on cognitively normal, mild cognitive
 is ideal for such analyses. But its restricted access poses a challengee. 
 To addresss this, the package uses publically available AD GWAS summary statistics, ensuring broad accessibility 
 while maintaining relevance for ADNI users.
+
+## Data and functionality
+Since ADNI data requires approved access through the LONI Image and Data Archive (http://adni.loni.usc.edu), 
+this tool cannot include it directly. However, i used directly summary statistics from Jansen et al. (2019), 
+available at https://ctg.cncr.nl/software/summary_statistics. 
+I included functionns to download these datasets, perform MR analyses (including instrument selection, harmonization, 
+and sensitivity checks), and visualize results by making is suitably for the users to present the results.  
+
+**Core functions:**
+  - `download_gwas_data_url(url)`: this f(x) downloads GWAS summary statistics from specified URLs.
+  - `get_ad_gwas_summary(study_id)`: this fx() retrieves data from the GWAS/NIAGADS API, which provides programmatic access to publica AD GWAS summary statistic.
+  - `run_mr_pipeline(exposure_data, outcome_data)`: this f(x) performs the full MR pipeline, including instrument selection, harmonization, MR analysis (e.g., IVW, MR-Egger, weighted median), sensitivity analyses (e.g., MR-egger intercept, heterogeneity tests), and visualization.
+  - `plot_mr_results(mr_results)`: this f(x) generates standard MR plots like scatter, forest and funnel plots.
+  - `prepare_mr_data(exposure_file, outcome_file)`: this f(x) loads and prepares user-provided data for analysis.
+  
